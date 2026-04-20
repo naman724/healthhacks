@@ -1,0 +1,236 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  /* Updated to use eggshell white background and sage green for graphics */
+  --background: #faf9f7; /* Eggshell white background */
+  --foreground: #0a0a0a; /* Dark text for contrast */
+  --card: #ffffff; /* White cards */
+  --card-foreground: #0a0a0a; /* Dark card text */
+  --popover: #ffffff; /* White popover */
+  --popover-foreground: #0a0a0a; /* Dark popover text */
+  --primary: #8aae93; /* Sage green as primary for boxes and graphics */
+  --primary-foreground: #ffffff; /* White text on primary */
+  --secondary: #8aae93; /* Sage green secondary for consistency */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #f5f5f4; /* Light gray muted background */
+  --muted-foreground: #374151; /* Dark gray for muted text */
+  --accent: #8aae93; /* Sage green accent for graphics */
+  --accent-foreground: #ffffff; /* White text on accent */
+  --destructive: #ef4444; /* Red for errors */
+  --destructive-foreground: #ffffff; /* White text on errors */
+  --border: #8aae93; /* Sage green borders */
+  --input: #ffffff; /* White input backgrounds */
+  --ring: rgba(138, 174, 147, 0.5); /* Sage green ring for focus */
+  --chart-1: #8aae93; /* Sage green for charts */
+  --chart-2: #7a9e83; /* Darker sage green */
+  --chart-3: #6a8e73; /* Even darker sage green */
+  --chart-4: #5a7e63; /* Darkest sage green */
+  --chart-5: #4a6e53; /* Very dark sage green */
+  --radius: 0.5rem;
+  --sidebar: #ffffff;
+  --sidebar-foreground: #0a0a0a;
+  --sidebar-primary: #8aae93;
+  --sidebar-primary-foreground: #ffffff;
+  --sidebar-accent: #8aae93;
+  --sidebar-accent-foreground: #ffffff;
+  --sidebar-border: #8aae93;
+  --sidebar-ring: rgba(138, 174, 147, 0.5);
+  --footer: #8aae93; /* Sage green footer background */
+  --footer-foreground: #ffffff; /* White text on footer */
+
+  /* Enhanced colorful accent colors for vibrant design */
+  --color-error: #ef4444; /* Red for assistive tech track */
+  --color-success: #10b981; /* Emerald for diagnostics track */
+  --color-purple: #8b5cf6; /* Purple for mental health track */
+  --color-teal: #14b8a6; /* Teal for clinical operations */
+  --color-orange: #f97316; /* Orange for additional accents */
+  --color-pink: #ec4899; /* Pink for additional accents */
+}
+
+.dark {
+  /* Updated dark mode to maintain high contrast */
+  --background: #0a0a0a; /* Very dark background */
+  --foreground: #ffffff; /* White text */
+  --card: #1a1a1a; /* Dark gray cards */
+  --card-foreground: #ffffff; /* White card text */
+  --popover: #1a1a1a; /* Dark popover */
+  --popover-foreground: #ffffff; /* White popover text */
+  --primary: #8aae93; /* Sage green as primary in dark mode */
+  --primary-foreground: #0a0a0a; /* Dark text on primary */
+  --secondary: #8aae93; /* Sage green secondary */
+  --secondary-foreground: #ffffff; /* White text on secondary */
+  --muted: #1a1a1a; /* Dark muted background */
+  --muted-foreground: #9ca3af; /* Light gray for muted text */
+  --accent: #8aae93; /* Sage green accent */
+  --accent-foreground: #0a0a0a; /* Dark text on accent */
+  --destructive: #ef4444; /* Lighter red for dark mode */
+  --destructive-foreground: #ffffff; /* White text on destructive */
+  --border: #8aae93; /* Sage green border in dark mode */
+  --input: #1a1a1a; /* Dark input background */
+  --ring: rgba(138, 174, 147, 0.5); /* Sage green ring */
+  --chart-1: #8aae93;
+  --chart-2: #7a9e83;
+  --chart-3: #6a8e73;
+  --chart-4: #5a7e63;
+  --chart-5: #4a6e53;
+  --sidebar: #1a1a1a;
+  --sidebar-foreground: #ffffff;
+  --sidebar-primary: #ffffff;
+  --sidebar-primary-foreground: #0a0a0a;
+  --sidebar-accent: #8aae93;
+  --sidebar-accent-foreground: #0a0a0a;
+  --sidebar-border: #8aae93;
+  --sidebar-ring: rgba(138, 174, 147, 0.5);
+  --footer: #8aae93; /* Sage green footer background */
+  --footer-foreground: #0a0a0a; /* Dark text on footer */
+
+  /* Enhanced dark mode colorful accents */
+  --color-error: #ef4444;
+  --color-success: #10b981;
+  --color-purple: #8b5cf6;
+  --color-teal: #14b8a6;
+  --color-orange: #f97316;
+  --color-pink: #ec4899;
+}
+
+@theme inline {
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+  /* Added footer color tokens */
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  /* Enhanced colorful accent color tokens */
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+  --color-purple: var(--color-purple);
+  --color-teal: var(--color-teal);
+  --color-orange: var(--color-orange);
+  --color-pink: var(--color-pink);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    /* Applied eggshell white background to body */
+    background: #faf9f7;
+    @apply text-foreground font-sans;
+  }
+}
+
+/* Updated gradient backgrounds to match the sage green shade theme */
+.gradient-bg-1 {
+  background: linear-gradient(135deg, #8aae93 0%, #7a9e83 50%, #6a8e73 100%);
+}
+
+.gradient-bg-2 {
+  background: linear-gradient(135deg, #7a9e83 0%, #6a8e73 50%, #5a7e63 100%);
+}
+
+.gradient-bg-3 {
+  background: linear-gradient(135deg, #6a8e73 0%, #5a7e63 50%, #4a6e53 100%);
+}
+
+.gradient-bg-4 {
+  background: linear-gradient(135deg, #8aae93 0%, #6a8e73 50%, #4a6e53 100%);
+}
+
+.gradient-bg-5 {
+  background: linear-gradient(135deg, #7a9e83 0%, #8aae93 50%, #6a8e73 100%);
+}
+
+.gradient-bg-6 {
+  background: linear-gradient(135deg, #5a7e63 0%, #7a9e83 50%, #8aae93 100%);
+}
+
+.hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Enhanced colorful hover effects with sage green shades */
+.colorful-hover {
+  transition: all 0.3s ease;
+}
+
+.colorful-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(138, 174, 147, 0.3), 0 4px 12px rgba(59, 130, 246, 0.2), 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Added animated gradient backgrounds for dynamic sections */
+.animated-gradient {
+  background: linear-gradient(-45deg, #8aae93, #7a9e83, #6a8e73, #5a7e63);
+  background-size: 400% 400%;
+  animation: gradient-shift 15s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Added pulse animation for interactive elements with sage green */
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes pulse-glow {
+  from {
+    box-shadow: 0 0 20px rgba(138, 174, 147, 0.4);
+  }
+  to {
+    box-shadow: 0 0 30px rgba(138, 174, 147, 0.6), 0 0 40px rgba(59, 130, 246, 0.3);
+  }
+}
